@@ -24,8 +24,10 @@ module ALU_control(
 		func = 3'd3;
 		else if (instruction == 6'h27)
 		func = 3'd4;
-        else if (instruction == 6'h26)
+        else if (instruction == 6'h26) // xor
 		func = 3'd5;
+        else if (instruction == 6'h2A) // slt
+		func = 3'd6;
 		else
 		func = 3'd7;
 	end else if (ALUOp == 2'b01) begin

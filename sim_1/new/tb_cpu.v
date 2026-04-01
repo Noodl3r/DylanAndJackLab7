@@ -54,6 +54,9 @@ module tb_cpu;
 		instruction_initialize_data = 32'b000000_00000_00010_00001_00000_10_0111;      // NOR R1, R0, R2
 		#20;
         instruction_initialize_address = 32;
+		instruction_initialize_data = 32'b000000_00000_00010_00001_00000_10_1010;      // SLT R1, R0, R2
+		#20;
+        instruction_initialize_address = 36;
 		instruction_initialize_data = 32'b000100_00000_00000_11111_11111_11_1111;      // BEQ R0, R0, -1
 		#20;
 		initialize = 0;

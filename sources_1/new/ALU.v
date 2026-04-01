@@ -39,6 +39,8 @@ module ALU(
 		out = ~(a|b);
         else if (func == 3'd5)    // xor 
 		out = a^b;
+        else if (func == 3'd6)    // slt 
+		out = a<b;
 		else
 		out = 0;
    end
