@@ -27,16 +27,18 @@ module ALU(
 	end
 	
 	always @(*) begin
-		if (func == 3'd0) 
+		if (func == 3'd0)         // add
 		out = a+b;
-		else if (func == 3'd1)
+		else if (func == 3'd1)    // sub
 		out = a-b;
-		else if (func == 3'd2)
+		else if (func == 3'd2)    // and
 		out = a&b;
-		else if (func == 3'd3)
+		else if (func == 3'd3)    // or
 		out = a|b;
-		else if (func == 3'd4)
+		else if (func == 3'd4)    // nor 
 		out = ~(a|b);
+        else if (func == 3'd5)    // xor 
+		out = a^b;
 		else
 		out = 0;
    end
