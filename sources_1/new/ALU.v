@@ -42,7 +42,7 @@ module ALU(
         else if (func == 3'd6)    // slt 
 		out = a<b;
 		else
-		out = 0;
+		out = b << 16;
    end
 
 

@@ -2,7 +2,7 @@
 
 module ALU_control(
 	 input [5:0] instruction,
-	 input [1:0] ALUOp,
+	 input [2:0] ALUOp,
 	 output reg [2:0] func
     );
 
@@ -13,7 +13,7 @@ module ALU_control(
 	// ALUOp = 2'b10 for lw and sw instructions
 
 
-	if (ALUOp == 2'b00) begin  
+	if (ALUOp == 3'b000) begin  
 		if (instruction == 6'h20) 
 		func = 3'd0;
 		else if (instruction == 6'h22)
@@ -28,12 +28,14 @@ module ALU_control(
 		func = 3'd5;
         else if (instruction == 6'h2A) // slt
 		func = 3'd6;
-		else
-		func = 3'd7;
-	end else if (ALUOp == 2'b01) begin
+	end else if (ALUOp == 3'b001) begin
 		func = 3'd1;
-	end else if (ALUOp == 2'b10) begin
+	end else if (ALUOp == 3'b010) begin
 		func = 3'd0;
+    end else if (ALUOp == 3'b011) begin
+		func = 3'd2; // and
+    end else if (ALUOp == 3'b100) begin
+		func = 3'd7; // shift L 16
 	end else begin
 		func = 3'd7;
 	end

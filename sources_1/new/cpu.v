@@ -46,7 +46,7 @@ module cpu(
 	
 	
 	
-	 wire [1:0] ALUOp;
+	 wire [2:0] ALUOp;
 	 wire MemRead;
 	 wire MemtoReg;
 	 wire RegDst;
