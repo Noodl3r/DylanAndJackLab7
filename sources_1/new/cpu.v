@@ -54,7 +54,8 @@ module cpu(
 	 wire ALUSrc;
 	 wire MemWrite;
 	 wire RegWrite;
-    control Control(instruction [31:26], ALUOp, MemRead, MemtoReg, RegDst, Branch, ALUSrc, MemWrite, RegWrite); 
+	 wire branchNE;
+    control Control(instruction [31:26], ALUOp, MemRead, MemtoReg, RegDst, Branch, ALUSrc, MemWrite, RegWrite, branchNE); 
 	 
 	 
 	 
@@ -100,7 +101,7 @@ module cpu(
 	 
 	 
 	 wire PCSrc;
-	 and Branch_And (PCSrc, Branch, zero_flag);
+	 and Branch_And (PCSrc, Branch, zero_flag ^ branchNE);
 	 mux #(32) PC_Input_MUX (PCSrc, PC_plus_4, Branch_target_address, PC_in);
 	 
 	 

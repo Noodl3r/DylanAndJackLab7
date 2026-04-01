@@ -68,6 +68,9 @@ module tb_cpu;
         instruction_initialize_address = 48;
         instruction_initialize_data = 32'b001111_00011_00011_1111111111111111;         // LUI R3, 0xFFFF
         #20;
+        instruction_initialize_address = 52;
+        instruction_initialize_data = 32'b000101_00001_00010_0000000000000100;         // BNE R1, R2, 4
+        #20;
 //        instruction_initialize_address = 36;
 //		instruction_initialize_data = 32'b000100_00000_00000_11111_11111_11_1111;      // BEQ R0, R0, -1
 //		#20;
